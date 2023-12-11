@@ -1,0 +1,76 @@
+baseURL = ''
+languageCode = 'en-us'
+title = 'Amir Rahnama'
+theme = 'PaperMod'
+
+
+enableInlineShortcodes = true
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+enableEmoji = true
+pygmentsUseClasses = true
+
+
+[[menu.main]]
+identifier = "archives"
+name = "archives"
+url = "archives"
+weight = 10
+
+[[menu.main]]
+identifier = "categories"
+name = "tags"
+url = "/tags/"
+weight = 10
+
+[params]
+env = "production"
+description = "Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod"
+author = "Theme PaperMod"
+defaultTheme = "auto"
+ShowShareButtons = true
+ShowReadingTime = true
+displayFullLangName = true
+ShowPostNavLinks = true
+ShowBreadCrumbs = true
+ShowCodeCopyButtons = true
+ShowRssButtonInSectionTermList = true
+ShowToc = true
+images = [ "papermod-cover.png" ] 
+
+  [params.profileMode]
+  enabled = true
+  title = "Amir Rahnama"
+  subtitle = "I'm Amir Rahnama. A PhD Student at KTH Royal Institute of Technology. \n See archives for my posts on Machine Learning, Statistics and Mathematics."
+  imageUrl = "amir.png"
+  imageTitle = "my image"
+
+    #[[params.profileMode.buttons]]
+    #name = "Archive"
+    #url = "archives"
+
+    #[[params.profileMode.buttons]]
+    #name = "Tags"
+    #url = "tags"
+
+  [params.homeInfoParams]
+  Title = "PaperMod"
+  Content = """
+  ![alt text](amir.png)
+Hej! I'm Amir Rahnama. A PhD Student at KTH Royal Institute of Technology.
+- I write about Machine Learning, Statistics and Mathematics.
+"""
+
+  [[params.socialIcons]]
+  name = "googlescholar"
+  url = "https://scholar.google.com/citations?user=qOBAzfwAAAAJ&hl=sv"
+
+  [[params.socialIcons]]
+  name = "github"
+  url = "https://github.com/amir-rahnama"
+
+  [[params.socialIcons]]
+  name = "twitter"
+  url = "https://twitter.com/amirrahnama_"
