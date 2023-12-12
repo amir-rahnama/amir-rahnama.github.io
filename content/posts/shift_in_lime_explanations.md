@@ -18,7 +18,7 @@ The second step is when LIME randomly samples features present in the explained 
 
 The third step is to transform these instances from binary to actual values. LIME replaces the values of the original explained instance with the values that received 1 in the text and image case. For tabular, it replaces the value that is between the selected quartile. This process is done $T$ times to obtain a sample $Z$. The sampling process for the Tabular dataset is shown in the figure taken from [2]:
 
-![LIMETabular Sampling](/me/static/LIME_Sampling.png)
+![LIMETabular Sampling](/LIME_Sampling.png)
 
 
 The fourth and last step is that the LIME uses black-box prediction on these newly generated instances and learns a ridge regression model between the $(Z, f(Z))$ where $f(Z)$ is obtained with respect to a label $C$. Before training, each generated sample is weighted using a kernel function based on its proximity to the explained instance and passed to the Ridge model. After training the Ridge model, the weight of this Ridge regression model is the output local explanation.
@@ -32,7 +32,7 @@ LIME claims that the weights of this Ridge model can show the important features
 Let us see an example to show what we want to do. We train a Random Forest model on the third and fourth features of the Iris dataset. We'd like to highlight our question for the local explanations of test instance number ten in the Iris dataset. We set the number of LIME samples to 20. 
 
 
-![Motivational Example](/me/static/lime_sample_20.png)
+![Motivational Example](/lime_sample_20.png)
 
 On the left, we see the explained instance (red dot) with 20 samples that are its nearest neighbors in the original input space $X$, namely $X_{\textrm{local}}$. In the middle, we see the intermediate binary sampled features. Since we are in 2-D, they are either (0,0), (0, 1), (1,0) or (1, 1). On the right hand, we see the explained instance and its samples transformed back into the LIME's real space. Again, the red dot is the explained instance. Notice that the instance is shifted on the right figure since each feature value is set to the average values of its quartiles. 
 
