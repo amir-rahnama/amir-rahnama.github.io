@@ -1,4 +1,4 @@
-baseURL = 'https://github.com/amir-rahnama/me'
+baseURL = '/'
 languageCode = 'en-us'
 title = 'Amir Rahnama'
 theme = 'PaperMod'
