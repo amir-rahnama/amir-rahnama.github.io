@@ -2,13 +2,13 @@
 title = 'Data and Label Shift in LIME explanations'
 date = 2023-12-12T20:50:40+01:00
 draft = false
-tags = ["xAI", "research projects", "machine learning"]
+tags = ['xai', 'research projects', 'machine learning']
 +++
 
 
 In this post, I will concisely summarize my research study, "A study of data and label shift in the LIME framework," which was a collaboration with my supervisor, Professor Henrik Boström. The paper was accepted as oral in the Neurips 2019 workshop on "Human-Centric Machine Learning." You can read the paper on [Arxiv](https://arxiv.org/abs/1910.14421), and the workshop website can be accessed here: [https://sites.google.com/view/hcml-2019](https://sites.google.com/view/hcml-2019).
 
-## Introduction
+### Introduction
 
 In 2019, LIME explanations were prevalent [1], but LIME operated differed significantly from how explanations functioned in the older days. Before LIME, feature importance explanations were the weights of an interpretable model, and they were one vector that provided importance scores for all instances. LIME operated differently and could provide feature importance for a single instance $x$. LIME calls this to be a local explanation. To obtain Local LIME explanations, we need a black-box prediction function that outputs probability scores, $f$, and a background dataset that is usually the training set $X$. So far, so good. But there are three steps where things start to get complicated: 
 
@@ -38,14 +38,14 @@ On the left, we see the explained instance (red dot) with 20 samples that are it
 
 We can see the difference between these two spaces in these visualizations. The samples in the vicinity of the explained instance in the original input space (left) are very different from those in the LIME space (right). 
 
-## Method
+### Method
 
 We could not just look at visualization. We needed a metric to measure this difference conclusively. Because of this, we used a two-sample Maximum Mean Discrepancy (MMD) test proposed in [3]. Like all other statistical tests, the MMD test provides us with a p-value and significance but also outputs the magnitude of the shift. Moreover, this test was reliable for samples with high feature dimensions. We ran the kernel test between the samples of the LIME explanations for each test instance $Z$ with its K-nearest neighbors in the original input space, $X_{\textrm{local}}$. In this comparison, naturally, $|Z| = |X_{\textrm{local}}| = n$. We set the acceptance level to be $\alpha=0.05$. The null hypothesis $H_0$ is that $P(Z) = P(X_{\textrm{local}})$. In other words, both come from the same distribution.  
 
 
-## Evalution
+### Evalution
 
-### Document Classification
+#### Document Classification
 
 The first use case is document classification using SVM models in the newsgroup dataset. This is one of the datasets investigated in the original LIME paper [1]. We obtained LIME explanations of each test instance for its predicted label and used the MMD two-sample test. In the Table below, you can see the results for explaining all test instances. In total, there are 717 test instances in the test dataset. Given the sampling size of $n$ for LIME, we can see that most of these samples diverge from their nearest neighbors in the original input space even in a small number of samples. The average and standard deviation of MMD values show significant divergence, especially for $n \geq 20$.
 
@@ -58,6 +58,7 @@ The first use case is document classification using SVM models in the newsgroup 
 | 200   | 717 (100%)  |     0 (0%)       |   44.20 ± 15.84  |
 | 500   | 717 (100%)  |     0 (0%)       |   87.35 ± 36.75  |
 
+#### Image Classification
 
 We performed a similar analysis for a subset of 100 test instances in ImageNet with the pre-trained InceptionV1 model. For the sample to be representative, we ensured that this subsample covers a large set of predicted classes. In this case, we found the nearest neighbors in the embedding space, as KNN suffers for high dimensional datasets. The table below shows the result for the ImageNet use case. We can see that the divergence is more significant for this case than in the previous case. 
 
@@ -71,7 +72,7 @@ We performed a similar analysis for a subset of 100 test instances in ImageNet w
 
 We performed a similar analysis for the distribution of the predicted values for $P_{f(Z)}$ versus $P_{f(X_local)}$. The results can be found in Tables 2 and 4 in the paper. 
 
-## Summary and conclusion 
+### Summary and conclusion 
 
 Our study showed a divergence between the LIME samples of the explained instances versus those near the explained instance in the original data space. Our empirical study questions whether, as LIME claimed in its original paper, the explanation from the Ridge surrogate model contains information about the vicinity of the explained instance.   
 
@@ -79,7 +80,7 @@ We conclude that random sampling without restriction is not a suitable method to
 
 
 
-## Citation
+### Citation
 
 If you want to cite our work, please use the following Bibtex entry:
 ```
