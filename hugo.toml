@@ -3,7 +3,7 @@ languageCode = 'en-us'
 title = 'Amir Rahnama'
 theme = 'PaperMod'
 
-canonifyurls = true
+canonifyurls = false
 enableInlineShortcodes = true
 enableRobotsTXT = true
 buildDrafts = false
