@@ -27,13 +27,14 @@ weight = 10
 
 [params]
 env = "production"
+math = true
 description = "Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod"
 author = "Theme PaperMod"
 defaultTheme = "auto"
 ShowShareButtons = true
 ShowReadingTime = true
 displayFullLangName = true
-ShowPostNavLinks = true
+ShowPostNavLinks = false
 ShowBreadCrumbs = true
 ShowCodeCopyButtons = true
 ShowRssButtonInSectionTermList = true
