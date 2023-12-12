@@ -86,7 +86,7 @@ If you want to cite our work, please use the following Bibtex entry:
 @article{rahnama2019study,
   title={A study of data and label shift in the LIME framework},
   author={Rahnama, Amir Hossein Akhavan and Bostr{\"o}m, Henrik},
-  journal={arXiv preprint arXiv:1910.14421},
+  journal={NeurIPS 2019 Workshop of Human-Centric Machine Learning},
   year={2019}
 }
 ```
