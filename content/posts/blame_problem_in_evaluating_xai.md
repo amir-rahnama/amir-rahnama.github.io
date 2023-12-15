@@ -1,5 +1,5 @@
 +++
-title = Toward Unbiased Evaluation of Local Explanations
+title = 'Toward Unbiased Evaluation of Local Explanations'
 date = 2023-12-13T12:00:47+01:00
 draft = false
 +++
@@ -21,7 +21,7 @@ We now have a flood of new explanation techniques that are introduced. Only in o
 ![List of Explanation Techniques](/list_of_explanations.png)
 
 
-And the not-surprising fact is that they largely disagree with one another. Local explanations even disagree when explaining a 99.9% accurate Random Forest model on an Iris dataset:
+And the not-surprising fact is that they largely disagree with one another. Local explanations even disagree when explaining the prediction of Random Forest model for the test instance number ten from the Iris dataset with respect to its predicted class:
 
 ![List of Explanation Techniques](/lime_vs_kernel_shap.png)
 
