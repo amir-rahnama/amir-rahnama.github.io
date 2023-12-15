@@ -1,5 +1,5 @@
 +++
-title = "Why can't Local Linear Additive Explanations of LIME and SHAP Explain Linear Additive Models?"
+title = "Why can't Local Additive Explanations Explain Linear Additive Models?"
 date = 2023-12-13T15:07:45+01:00
 draft = false
 +++
