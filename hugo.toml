@@ -1,7 +1,7 @@
-baseURL = 'https://amir-rahnama.github.io/'
-languageCode = 'en-us'
-title = 'Amir Rahnama'
-theme = 'PaperMod'
+baseURL = "https://amir-rahnama.github.io/"
+languageCode = "en-us"
+title = "Amir Rahnama"
+theme = "PaperMod"
 
 canonifyurls = true
 enableInlineShortcodes = true
@@ -57,9 +57,8 @@ images = [ "papermod-cover.png" ]
     #url = "tags"
 
   [params.homeInfoParams]
-  Title = "PaperMod"
-  Content = """
-  ![alt text](amir.png)
+Title = "PaperMod"
+Content = """![alt text](amir.png)
 PhD Student at KTH Royal Institute of Technology.
 - I write about Machine Learning, Statistics and Mathematics.
 """
