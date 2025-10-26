@@ -1,4 +1,4 @@
-baseURL = 'https://amir-rahnama.github.io/me/'
+baseURL = 'https://amir-rahnama.github.io/'
 languageCode = 'en-us'
 title = 'Amir Rahnama'
 theme = 'PaperMod'
@@ -64,17 +64,10 @@ PhD Student at KTH Royal Institute of Technology.
 - I write about Machine Learning, Statistics and Mathematics.
 """
 
-  [[params.socialIcons]]
-  name = "googlescholar"
-  url = "https://scholar.google.com/citations?user=qOBAzfwAAAAJ&hl=sv"
-
-  [[params.socialIcons]]
-  name = "github"
-  url = "https://github.com/amir-rahnama"
-
-  [[params.socialIcons]]
-  name = "twitter"
-  url = "https://twitter.com/amirrahnama_"
+  [params.social]
+    googlescholar = "https://scholar.google.com/citations?user=qOBAzfwAAAAJ&hl=sv"
+    github = "https://github.com/amir-rahnama"
+    twitter = "https://twitter.com/amirrahnama_"
 
 [caches]
   [caches.images]
