@@ -44,7 +44,7 @@ images = [ "papermod-cover.png" ]
   [params.profileMode]
   enabled = true
   title = "Amir Rahnama"
-  subtitle = "I'm Amir Rahnama. A PhD Student at KTH Royal Institute of Technology. See archives for my posts on Machine Learning, Statistics and Mathematics."
+  subtitle = "PhD Student at KTH Royal Institute of Technology. See archives for my posts on Machine Learning, Statistics and Mathematics."
   imageUrl = "amir.png"
   imageTitle = "my image"
 
@@ -60,7 +60,7 @@ images = [ "papermod-cover.png" ]
   Title = "PaperMod"
   Content = """
   ![alt text](amir.png)
-Hej! I'm Amir Rahnama. A PhD Student at KTH Royal Institute of Technology.
+PhD Student at KTH Royal Institute of Technology.
 - I write about Machine Learning, Statistics and Mathematics.
 """
 
@@ -75,3 +75,7 @@ Hej! I'm Amir Rahnama. A PhD Student at KTH Royal Institute of Technology.
   [[params.socialIcons]]
   name = "twitter"
   url = "https://twitter.com/amirrahnama_"
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
