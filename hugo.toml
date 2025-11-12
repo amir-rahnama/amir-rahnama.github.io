@@ -15,15 +15,21 @@ pygmentsUseClasses = true
 
 [[menu.main]]
 identifier = "archives"
-name = "archives"
+name = "Blog Posts"
 url = "archives"
 weight = 10
 
 [[menu.main]]
 identifier = "tags"
-name = "tags"
+name = "Topics"
 url = "tags"
 weight = 20
+
+[[menu.main]]
+identifier = "cv"
+name = "CV"
+url = "cv"
+weight = 30
 
 [params]
 env = "production"
@@ -40,11 +46,12 @@ ShowCodeCopyButtons = true
 ShowRssButtonInSectionTermList = true
 ShowToc = true
 images = [ "papermod-cover.png" ] 
-
+customCSS = ["css/custom.css", "css/extended/animated-background.css"]
+customJS = ["js/fadein.js"]
   [params.profileMode]
   enabled = true
   title = "Amir Rahnama"
-  subtitle = "Senior ML Engineer at All Ears. Formerly, Senior ML Consultant at Capgemini Sweden, Research Intern @ Spotify. I hold a PhD from KTH Royal Institute of Technology (Sweden)"
+  
   imageUrl = "amir.png"
   imageTitle = "my image"
 

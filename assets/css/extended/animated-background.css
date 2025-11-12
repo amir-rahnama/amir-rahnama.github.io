@@ -1,0 +1,150 @@
+/* Animated gradient background base (static until animation class added) */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    /* behind overlay */
+
+    /* Gradient colours */
+    background: linear-gradient(45deg,
+            #111111,
+            #333333,
+            #555555,
+            #777777);
+    background-size: 400% 400%;
+    /* animation removed; will start when .bg-animate applied */
+}
+
+/* Start background shift only after typing done */
+body.bg-animate::before {
+    animation: bg-shift 25s ease forwards;
+    /* single run */
+}
+
+@keyframes bg-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Accordion vertical wipe to black after typing */
+body.accordion-dark::before {
+    animation: accordion-wipe 1.2s ease forwards;
+}
+
+@keyframes accordion-wipe {
+    from {
+        clip-path: inset(0 0 100% 0);
+    }
+
+    to {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+/* Remove global body scale */
+
+/* Intro subtitle zoom (only intro span under name) */
+.profile_inner>span {
+    display: block;
+    max-width: 600px;
+    margin: 0.5rem auto 1.5rem auto;
+    min-height: 8rem;
+    /* reserve space for all typed lines */
+    white-space: pre-line;
+}
+
+@keyframes text-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+/* Disable image pulse */
+.profile img,
+.home-info img {
+    animation: none;
+    transform-origin: center center;
+}
+
+/* Disable name pulse */
+.profile_inner>h1 {
+    display: inline-block;
+    animation: none;
+    transform-origin: center center;
+}
+
+/* Overlay wipe left-to-right to black when typing finished */
+body.accordion-dark::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+    animation: wipe-ltr-width 1.2s ease forwards;
+}
+
+@keyframes wipe-ltr-width {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+/* Blinking caret for typing effect */
+.typing-caret::after {
+    content: "|";
+    animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}
+
+/* Keep social buttons fixed near bottom and centered */
+.profile .buttons {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+/* Emoji rain */
+/* Revamped emoji fall: full viewport, single transform in one keyframe */
+.emoji {
+    position: fixed;
+    top: -2rem;
+    font-size: 2rem;
+    pointer-events: none;
+    animation: emoji-fall 3s linear forwards;
+}
+
+@keyframes emoji-fall {
+    to {
+        top: calc(100vh + 2rem);
+    }
+}
