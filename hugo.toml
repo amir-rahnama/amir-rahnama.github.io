@@ -44,7 +44,7 @@ images = [ "papermod-cover.png" ]
   [params.profileMode]
   enabled = true
   title = "Amir Rahnama"
-  subtitle = "PhD Student at KTH Royal Institute of Technology. See archives for my posts on Machine Learning, Statistics and Mathematics."
+  subtitle = "Senior ML Engineer at All Ears. Formerly, Senior ML Consultant at Capgemini Sweden, Research Intern @ Spotify. I hold a PhD from KTH Royal Institute of Technology (Sweden)"
   imageUrl = "amir.png"
   imageTitle = "my image"
 
