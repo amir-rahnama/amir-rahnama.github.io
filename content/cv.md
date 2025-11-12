@@ -11,8 +11,9 @@ ShowBreadCrumbs: false
 # 
 
 **Email:** amirrahnama at gmail.com
-**Web:** amir-rahnama.github.io  
+
 **Citizenship:** Iran, Sweden   
+
 **Languages:** Swedish, English
 
 ---
