@@ -1,0 +1,42 @@
+:root {
+    --theme: #fff;
+    --entry: #cfcfff;
+    --primary: rgba(0, 0, 106, 0.88);
+    --secondary: rgba(0, 0, 80, 0.78);
+    --tertiary: rgba(0, 0, 106, 0.16);
+    --content: rgba(0, 0, 60, 0.88);
+    --hljs-bg: #1c1d21;
+    --code-bg: #f5f5f5;
+    --border: #eee;
+}
+
+.dark {
+    --theme: #0a0f2e;
+    --entry: #151c45;
+    --primary: rgba(240, 242, 250, 0.92);
+    /* Soft off-white */
+    --secondary: rgba(200, 205, 220, 0.78);
+    /* Muted gray-white */
+    --tertiary: rgba(80, 100, 200, 0.25);
+    --content: rgba(235, 238, 245, 0.88);
+    /* Soft off-white for content */
+    --hljs-bg: #0d1230;
+    --code-bg: #1a2350;
+    --border: #2a3566;
+}
+
+/* Apply Figtree font globally */
+body {
+    font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+}
+
+/* Remove the block display that's causing line breaks */
+.post-content p strong {
+    display: inline;
+    /* Keep bold text inline, not block */
+}
+
+/* Add spacing between job entries */
+.post-content p+p {
+    margin-top: 1.5em;
+}

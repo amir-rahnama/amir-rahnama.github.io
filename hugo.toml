@@ -14,16 +14,23 @@ pygmentsUseClasses = true
 
 
 [[menu.main]]
-identifier = "archives"
-name = "archives"
-url = "archives"
-weight = 10
+identifier = "posts"
+name = "posts"
+url = "posts"
+weight = 1
 
 [[menu.main]]
 identifier = "tags"
 name = "tags"
 url = "tags"
-weight = 20
+weight = 2
+
+[[menu.main]]
+identifier = "cv"
+name = "cv"
+url = "/cv/"
+weight = 3
+
 
 [params]
 env = "production"
@@ -43,10 +50,12 @@ images = [ "papermod-cover.png" ]
 
   [params.profileMode]
   enabled = true
-  title = "Amir Rahnama"
-  subtitle = "Senior ML Engineer at All Ears. Formerly, Senior ML Consultant at Capgemini Sweden, Research Intern @ Spotify. I hold a PhD from KTH Royal Institute of Technology (Sweden)"
-  imageUrl = "amir.png"
+  title = "Amir Rahnama, Ph.D"
+  subtitle = "Senior ML Engineer @ [All Ears](https://sv.allears.ai/)"
+  imageUrl = "intro.mp4"
   imageTitle = "my image"
+  imageWidth = 300
+  imageHeight = 300
 
     #[[params.profileMode.buttons]]
     #name = "Archive"
