@@ -15,7 +15,7 @@ hideMeta = true
 📍 Stockholm, Sweden  
 📞 [+46 (72) 978 5012](tel:+46729785012)  
 ✉️ [amirrahnama@gmail.com](mailto:amirrahnama@gmail.com)  
-Citizenship: Iran, Sweden | Languages: Swedish, English
+Languages: Swedish, English
 
 ---
 
