@@ -40,3 +40,128 @@ body {
 .post-content p+p {
     margin-top: 1.5em;
 }
+
+/* Timeline Events */
+/* Timeline Events */
+.events {
+    position: relative;
+    display: flex;
+    margin-block: 2em;
+    flex-direction: column;
+    row-gap: 2.5em;
+    padding-left: 2em;
+}
+
+.events::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 6px;
+    height: 100%;
+    width: 2px;
+    background: var(--border);
+}
+
+.event {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5em;
+}
+
+.event .marker {
+    position: relative;
+    left: -2em;
+    flex-shrink: 0;
+    margin-top: 0.5em;
+    z-index: 2;
+}
+
+.event .marker svg {
+    display: block;
+}
+
+.event .marker circle {
+    fill: var(--primary);
+    stroke: var(--theme);
+    stroke-width: 2;
+}
+
+.event .content {
+    flex: 1;
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.dark .event .content {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.event .content time {
+    font-weight: 600;
+    color: var(--secondary);
+    font-size: 0.85em;
+    display: block;
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.event .content h3 {
+    margin: 0 0 0.5em 0;
+    font-size: 1.1em;
+    color: var(--primary);
+}
+
+.event .content p {
+    margin: 0;
+    line-height: 1.6;
+    color: var(--content);
+}
+
+/* Different colors for alternating events */
+.event.programming .marker circle {
+    fill: #7aa7ff;
+}
+
+.event.work .marker circle {
+    fill: #ff6b6b;
+}
+
+/* Desktop: Center line and alternate sides */
+@media (min-width: 700px) {
+    .events {
+        padding-left: 0;
+    }
+
+    .events::before {
+        left: 50%;
+        margin-left: -1px;
+    }
+
+    .event {
+        justify-content: flex-end;
+        padding-right: calc(50% + 2em);
+    }
+
+    .event .marker {
+        position: absolute;
+        left: 50%;
+        margin-left: -6px;
+        margin-top: 0.5em;
+    }
+
+    .event .content {
+        max-width: 400px;
+        width: 100%;
+    }
+
+    /* Alternate events go to the right side */
+    .event:nth-child(even) {
+        justify-content: flex-start;
+        padding-right: 0;
+        padding-left: calc(50% + 2em);
+    }
+}

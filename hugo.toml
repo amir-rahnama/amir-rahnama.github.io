@@ -26,6 +26,12 @@ url = "tags"
 weight = 2
 
 [[menu.main]]
+identifier = "timeline"
+name = "timeline"
+url = "timeline"
+weight = 3
+
+[[menu.main]]
 identifier = "cv"
 name = "cv"
 url = "/cv/"
@@ -87,3 +93,8 @@ PhD Student at KTH Royal Institute of Technology.
 [caches]
   [caches.images]
     dir = ':cacheDir/images'
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
