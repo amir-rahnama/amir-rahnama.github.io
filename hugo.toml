@@ -28,7 +28,7 @@ weight = 2
 [[menu.main]]
 identifier = "timeline"
 name = "timeline"
-url = "timeline"
+url = "/timeline/"
 weight = 3
 
 [[menu.main]]
