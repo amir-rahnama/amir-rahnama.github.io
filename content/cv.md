@@ -1,99 +1,117 @@
-+++
-title = "Curriculum Vitae"
-date = 2026-01-14
-draft = false
-ShowToc = false
-ShowReadingTime = false
-disableShare = true
-ShowBreadCrumbs = false
-ShowPostNavLinks = false
-hideMeta = true
-+++
+# Amir Rahnama
 
-# Amir Rahnama, Ph.D
-
-📍 Stockholm, Sweden  
-📞 [+46 (72) 978 5012](tel:+46729785012)  
-✉️ [amirrahnama@gmail.com](mailto:amirrahnama@gmail.com)  
-Languages: Swedish, English
+ **Email:** amirrahnama@gmail.com  
+**Website:** [amir-rahnama.github.io](https://amir-rahnama.github.io/)  
+**Languages:** Swedish, English
 
 ---
 
-## Education
+## Summary
 
-**Ph.D., Machine Learning** | 2019 — 2023  
-**KTH Royal Institute of Technology** · Stockholm
-
-**MSc., Information Technology** | 2011 — 2014  
-**University of Jyväskylä** · Finland
-
-**BSc., Applied Mathematics** | 2008 — 2011  
-**Kharazmi University** · Tehran, Iran
+Machine Learning and AI professional with 7+ years of industry and 5 years of academic experience, strong production expertise with a research foundation in Explainable AI from KTH. Proven track record of building and deploying large-scale analytics and ML systems at organizations including nationwide fraud detection, taxi ride estimation models, and real-time media analytics platforms.
 
 ---
 
 ## Work Experience
 
-**Senior Machine Learning Engineer** | Oct 2025 — Now  
-**All Ears AB** (Sweden) · Stockholm, Sweden
+### Senior Machine Learning Engineer
+**All Ears AB** | Stockholm, Sweden  
+*October 2025 – Present*
 
-Part of the Analytics team, optimizing speech recognition (ASR) and developing topic modeling and sentiment analysis over large-scale text and audio data from conversations mentioning brands/products across social media and news channels worldwide.
+I am involved in several ML projects, including optimizing automatic speech recognition (ASR) models; developing multimodal text, audio, and video embedding models; and detecting real-time events. Ranking and recommendation systems that prioritize high-signal brand mentions based on user preferences. As an individual contributor, developed a survival-analysis model to predict time-to-churn and customer retention.
 
----
-
-**Senior Machine Learning Engineer** | Oct 2024 — Aug 2025  
-**Capgemini** (Sweden) · Stockholm, Sweden
-
-Member of the Generative AI and Analytics (GAIA) team; developed graph-based ML/AI and RAG solutions for fraud detection in payments.
+**Tech stack:** Parakeet, VLM2Vec-V2, PyTorch, and Hugging Face Transformers  
+**Supervisor:** Fredrik Olsson
 
 ---
 
-**Machine Learning Engineer** | Jan 2023 — Sep 2024  
-**KTH Royal Institute of Technology** · Stockholm, Sweden
+### Senior Machine Learning Engineer
+**Capgemini** | Stockholm, Sweden  
+*October 2024 – August 2025*
 
-Built ML models and deployed them to the cloud using Docker. Examples include automated truck-part maintenance estimation (Scania), customized medication based on patient history (AstraZeneca), and evaluation of LLMs for complex reasoning tasks.
+I was a member of the Generative AI and Analytics (GAIA) Team, where I developed graph-based machine learning, AI, and RAG solutions to detect fraudulent organizations and anomalous supplier payments.
 
----
-
-**Machine Learning Research Intern** | May 2020 — Sep 2020  
-**Spotify** · Stockholm, Sweden
-
-Developed and deployed a TensorFlow Search & recommendation model for predicting relevant songs/podcasts on Google Cloud Platform (GCP), with an emphasis on explainability.
+**Tech stack:** Neo4j, PyTorch, Llama, LangChain, Docker, DeepSeek-V3, and Dagster  
+**Supervisor:** Tobias Fasth
 
 ---
 
-**Data Scientist & Team Lead (Consultant)** | Oct 2015 — Oct 2018  
-**Iteam Solutions AB** · Stockholm, Sweden
+### Machine Learning
+**KTH Royal Institute of Technology** | Stockholm, Sweden  
+*January 2019 – September 2024*
 
-Built data pipelines, reporting, data cleaning, and ML models deployed in product cloud. Examples: fair taxi fare estimation increasing retention by 20% (Taxi Stockholm) using TensorFlow/Scikit-Learn on GCP; clustering/categorization of unemployed individuals saving hundreds of hours weekly for case officers (TRR Trygghetsrådet) using PyTorch/Scikit-Learn on Azure.
+I developed machine learning models to automatically predict truck-part maintenance needs (with Scania), built models for personalized medication recommendations based on patient history (with AstraZeneca), and evaluated large language models (LLMs) on complex reasoning tasks.
 
----
-
-**Data Engineer and Scientist** | Mar 2013 — Sep 2015  
-**Gapminder** · Stockholm, Sweden
-
-Developed Python data pipelines and D3.js visualizations to tell data-driven stories about countries' social development, deployed on Microsoft Azure. Tools: [gapminder.org/tools](https://www.gapminder.org/tools/).
+**Tech stack:** PyTorch, PyTorch Geometric, Scikit-learn, Statsmodels, Python  
+**Supervisor:** Henrik Boström
 
 ---
 
-## Skill Matrix
+### Machine Learning Research Intern
+**Spotify** | Stockholm, Sweden  
+*May 2020 – September 2020*
 
-### Languages
-- **Python** ★★★★★
-- **Node.js** ★★★★☆
+I developed ranking and relevance algorithms for a TensorFlow-based search and recommendation model on Google Cloud Platform (GCP), enabling accurate prediction of relevant songs and podcasts while making the model explainable.
 
-### ML Frameworks
-- **PyTorch** ★★★★☆
-- **HuggingFace Transformers** ★★★★☆
-- **Scikit-Learn** ★★★★★
-- **TensorFlow** ★★★☆☆
+**Tech stack:** TensorFlow, Google BigTable, Python  
+**Supervisors:** Mounia Lalmas, Judith Bütepage
 
-### Cloud & DevOps
-- **Docker** ★★★★☆
-- **GCP** ★★★★☆
-- **Azure** ★★★☆☆
-- **AWS** ★★★☆☆
+---
 
-### Databases
-- **PostgreSQL** ★★★★☆
-- **MongoDB** ★★★☆☆
+### Data Scientist & Team Lead (Consultant)
+**Iteam Solutions AB** | Stockholm, Sweden  
+*October 2015 – October 2018*
+
+Developed an accurate taxi-fare estimation model for **Taxi Stockholm**. Categorized unemployed individuals into similar groups, saving case officers hours of manual work each week (with **TRR Trygghetsrådet**).
+
+**Tech stack:** TensorFlow and scikit-learn models on Google Cloud Platform (GCP) and Microsoft Azure  
+**Supervisor:** Christian Landgren
+
+---
+
+### Data Engineer and Scientist
+**Gapminder** | Stockholm, Sweden  
+*March 2013 – September 2015*
+
+Developed Python data pipelines and D3.js visualizations to tell data-driven stories about countries' social development, deployed on Microsoft Azure: [https://www.gapminder.org/tools/](https://www.gapminder.org/tools/)
+
+**Tech stack:** Python, D3.js  
+**Supervisors:** Hans Rosling, Ola Rosling
+
+---
+
+## Education
+
+### Ph.D., Machine Learning
+**KTH Royal Institute of Technology** | Stockholm  
+*2019 – 2023*
+
+### MSc., Information Technology
+**University of Jyväskyla** | Finland  
+*2011 – 2014*
+
+### BSc., Applied Mathematics
+**Kharazmi University** | Tehran, Iran  
+*2008 – 2011*
+
+---
+
+## Scientific Publications
+
+1. **Rahnama, A.**, Geurts, P., & Boström, H. (2024). Faithfulness of Local Explanations for Ensemble Models. *27th International Conference on Discovery Science*.
+
+2. **Rahnama, A.**, Bütepage, J., & Boström, H. (2024). Listwise Explanations of LambdaMART. *The 2nd XAI World Conference*.
+
+3. **Rahnama, A.**, Bütepage, J., & Boström, H. (2024). Pointwise Explanations of LambdaMART. *14th Scandinavian Conference on AI*.
+
+4. **Rahnama, A.**, Alfaro, L.G., Wang, Z., & Movin, M. (2024). Local Interpretable Model-Agnostic Explanations for Neural Ranking Models. *14th Scandinavian Conference on AI*.
+
+5. **Rahnama, A.** (2023). The Blame Problem in Evaluating Local Explanations, and How to Tackle It. *XAI Workshop at ECAI Conference*.
+
+6. **Rahnama, A.**, Bütepage, J., Geurts, P., & Boström, H. (2023). Can Local additive explanations explain Linear Additive Models? *ECML Conference*.
+
+7. **Rahnama, A.**, & Boström, H. (2019). A study of data and label shift in the LIME framework. *NeurIPS Workshop in Human-Centric ML*.
+
+8. **Rahnama, A.**, & Toloo, M. (2018). An LP-based hyperparameter optimization model for language modeling. *Journal of Supercomputing*.
+
+9. **Rahnama, A.** (2014). Distributed real-time sentiment analysis for big data social streams. *2nd International Conference on Control, Decision and Information*.

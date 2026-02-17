@@ -69,20 +69,6 @@ disableShare = true
     </div>
   </div>
 
-  <div class="event programming">
-    <div class="marker">
-      <svg width="12" height="12">
-        <circle cx="6" cy="6" r="5" />
-      </svg>
-    </div>
-    <div class="content">
-      <time>2018</time>
-      <h2>Iteam Solutions AB</h2>
-      <h3>Data Scientist</h3>
-      <p>Automated allocation of unemployed to case officers (TRR Trygghetsrådet) and nationwide taxi fare estimation model (Taxi Stockholm).</p>
-    </div>
-  </div>
-
   <div class="event work">
     <div class="marker">
       <svg width="12" height="12">
@@ -94,6 +80,20 @@ disableShare = true
       <h2>Rebase Energy</h2>
       <h3>Data Scientist</h3>
       <p>Predict the wind supply in the European electric market.</p>
+    </div>
+  </div>
+
+  <div class="event programming">
+    <div class="marker">
+      <svg width="12" height="12">
+        <circle cx="6" cy="6" r="5" />
+      </svg>
+    </div>
+    <div class="content">
+      <time>2018</time>
+      <h2>Iteam Solutions AB</h2>
+      <h3>Data Scientist</h3>
+      <p>Automated allocation of unemployed to case officers (TRR Trygghetsrådet) and nationwide taxi fare estimation model (Taxi Stockholm).</p>
     </div>
   </div>
 
