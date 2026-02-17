@@ -90,7 +90,7 @@ disableShare = true
       </svg>
     </div>
     <div class="content">
-      <time>2018</time>
+      <time>2015-2018</time>
       <h2>Iteam Solutions AB</h2>
       <h3>Data Scientist</h3>
       <p>Automated allocation of unemployed to case officers (TRR Trygghetsrådet) and nationwide taxi fare estimation model (Taxi Stockholm).</p>

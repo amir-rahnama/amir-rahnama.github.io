@@ -73,6 +73,14 @@ PhD Student at KTH Royal Institute of Technology.
 """
 
   [[params.socialIcons]]
+  name = "email"
+  url = "mailto:amirrahnama@gmail.com"
+
+  [[params.socialIcons]]
+  name = "twitter"
+  url = "https://x.com/amirrahnama_"
+
+  [[params.socialIcons]]
   name = "googlescholar"
   url = "https://scholar.google.com/citations?user=qOBAzfwAAAAJ&hl=sv"
 
@@ -80,9 +88,7 @@ PhD Student at KTH Royal Institute of Technology.
   name = "github"
   url = "https://github.com/amir-rahnama"
 
-  [[params.socialIcons]]
-  name = "twitter"
-  url = "https://x.com/amirrahnama_"
+
 
 [caches]
   [caches.images]

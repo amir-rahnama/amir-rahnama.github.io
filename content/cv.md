@@ -1,5 +1,4 @@
 +++
-title = "About Me"
 date = 2026-02-13
 draft = false
 ShowToc = false
@@ -11,24 +10,17 @@ hideMeta = true
 disableShare = true
 +++
 
-# Amir Rahnama
 
- **Email:** amirrahnama@gmail.com  
-**Website:** [amir-rahnama.github.io](https://amir-rahnama.github.io/)  
-**Languages:** Swedish, English
+## 👤 Summary
 
----
-
-## Summary
-
-Machine Learning and AI professional with 7+ years of industry and 5 years of academic experience, strong production expertise with a research foundation in Explainable AI from KTH. Proven track record of building and deploying large-scale analytics and ML systems at organizations including nationwide fraud detection, taxi ride estimation models, and real-time media analytics platforms.
+Machine Learning and AI professional with 7+ years of industry and 5 years of academic experience, strong production expertise with a research foundation in Explainable AI from KTH. Projects include: nationwide fraud detection, taxi ride estimation models, and real-time media analytics platforms.
 
 ---
 
-## Work Experience
+## 💼 Work Experience
 
-### Senior Machine Learning Engineer
-**All Ears AB** | Stockholm, Sweden  
+### 🎙️ Senior Machine Learning Engineer
+**All Ears AB** | Stockholm, Sweden 🇸🇪  
 *October 2025 – Present*
 
 I am involved in several ML projects, including optimizing automatic speech recognition (ASR) models; developing multimodal text, audio, and video embedding models; and detecting real-time events. Ranking and recommendation systems that prioritize high-signal brand mentions based on user preferences. As an individual contributor, developed a survival-analysis model to predict time-to-churn and customer retention.
@@ -38,8 +30,8 @@ I am involved in several ML projects, including optimizing automatic speech reco
 
 ---
 
-### Senior Machine Learning Engineer
-**Capgemini** | Stockholm, Sweden  
+### 🤖 Senior Machine Learning Engineer
+**Capgemini** | Stockholm, Sweden 🇸🇪  
 *October 2024 – August 2025*
 
 I was a member of the Generative AI and Analytics (GAIA) Team, where I developed graph-based machine learning, AI, and RAG solutions to detect fraudulent organizations and anomalous supplier payments.
@@ -49,8 +41,8 @@ I was a member of the Generative AI and Analytics (GAIA) Team, where I developed
 
 ---
 
-### Machine Learning
-**KTH Royal Institute of Technology** | Stockholm, Sweden  
+### 🔬 Machine Learning
+**KTH Royal Institute of Technology** | Stockholm, Sweden 🇸🇪  
 *January 2019 – September 2024*
 
 I developed machine learning models to automatically predict truck-part maintenance needs (with Scania), built models for personalized medication recommendations based on patient history (with AstraZeneca), and evaluated large language models (LLMs) on complex reasoning tasks.
@@ -60,8 +52,8 @@ I developed machine learning models to automatically predict truck-part maintena
 
 ---
 
-### Machine Learning Research Intern
-**Spotify** | Stockholm, Sweden  
+### 🎵 Machine Learning Research Intern
+**Spotify** | Stockholm, Sweden 🇸🇪  
 *May 2020 – September 2020*
 
 I developed ranking and relevance algorithms for a TensorFlow-based search and recommendation model on Google Cloud Platform (GCP), enabling accurate prediction of relevant songs and podcasts while making the model explainable.
@@ -71,45 +63,45 @@ I developed ranking and relevance algorithms for a TensorFlow-based search and r
 
 ---
 
-### Data Scientist & Team Lead (Consultant)
-**Iteam Solutions AB** | Stockholm, Sweden  
+### 📊 Data Scientist & Team Lead (Consultant)
+**Iteam Solutions AB** | Stockholm, Sweden 🇸🇪  
 *October 2015 – October 2018*
 
-Developed an accurate taxi-fare estimation model for **Taxi Stockholm**. Categorized unemployed individuals into similar groups, saving case officers hours of manual work each week (with **TRR Trygghetsrådet**).
+Developed an accurate taxi-fare estimation model for **Taxi Stockholm** 🚕. Categorized unemployed individuals into similar groups, saving case officers hours of manual work each week (with **TRR Trygghetsrådet**).
 
 **Tech stack:** TensorFlow and scikit-learn models on Google Cloud Platform (GCP) and Microsoft Azure  
 **Supervisor:** Christian Landgren
 
 ---
 
-### Data Engineer and Scientist
-**Gapminder** | Stockholm, Sweden  
+### 📈 Data Engineer and Scientist
+**Gapminder** | Stockholm, Sweden 🇸🇪  
 *March 2013 – September 2015*
 
-Developed Python data pipelines and D3.js visualizations to tell data-driven stories about countries' social development, deployed on Microsoft Azure: [https://www.gapminder.org/tools/](https://www.gapminder.org/tools/)
+Developed Python data pipelines and D3.js visualizations to tell data-driven stories about countries' social development, deployed on Microsoft Azure: [https://www.gapminder.org/tools/](https://www.gapminder.org/tools/) 🌍
 
 **Tech stack:** Python, D3.js  
 **Supervisors:** Hans Rosling, Ola Rosling
 
 ---
 
-## Education
+## 🎓 Education
 
-### Ph.D., Machine Learning
-**KTH Royal Institute of Technology** | Stockholm  
+### 🎓 Ph.D., Machine Learning
+**KTH Royal Institute of Technology** | Stockholm 🇸🇪  
 *2019 – 2023*
 
-### MSc., Information Technology
-**University of Jyväskyla** | Finland  
+### 📚 MSc., Information Technology
+**University of Jyväskyla** | Finland 🇫🇮  
 *2011 – 2014*
 
-### BSc., Applied Mathematics
-**Kharazmi University** | Tehran, Iran  
+### 🔢 BSc., Applied Mathematics
+**Kharazmi University** | Tehran, Iran 🇮🇷  
 *2008 – 2011*
 
 ---
 
-## Scientific Publications
+## 📄 Scientific Publications
 
 1. **Rahnama, A.**, Geurts, P., & Boström, H. (2024). Faithfulness of Local Explanations for Ensemble Models. *27th International Conference on Discovery Science*.
 
