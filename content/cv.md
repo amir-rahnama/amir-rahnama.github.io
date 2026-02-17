@@ -1,3 +1,16 @@
++++
+title = "About Me"
+date = 2026-02-13
+draft = false
+ShowToc = false
+ShowReadingTime = false
+ShowShareButtons = false
+ShowBreadCrumbs = false
+ShowPostNavLinks = false
+hideMeta = true
+disableShare = true
++++
+
 # Amir Rahnama
 
  **Email:** amirrahnama@gmail.com  
