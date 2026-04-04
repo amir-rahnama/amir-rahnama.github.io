@@ -207,7 +207,7 @@ How do these different implementation compare with each other. In order to evalu
 
 Let us start with time and memory performance. Here, we perform insertion with arrays with different number of elements, `n`. For this, we are using `get_traced_memory` to show the peak traced memory that focuses on the traced objects during that window in the Python process. For time, we are just counting  the time it takes to insert into the Binary Search Tree.
 
-{{< figure src="/human_vs_agent_vs_human_in_the_loop.md/bts_benchmark_charts.png" caption="Evaluation of Time and Memory Usage" >}}
+{{< figure src="/human_vs_agent_vs_human_in_the_loop/bts_benchmark_charts.png" caption="Evaluation of Time and Memory Usage" >}}
 
 As you can see, we compared the performance with arrays up to 100000 elements. We see that the human written code performs well with smaller arrays but scales poorly with larger arrays, as the agent correctly explained in the human-in-the-loop and agent-assisted cases. However, surprisingly, the fully agentic code is also suffering with scale. Both agent-assisted and human-in-the-loop functions perform similar results when it comes to time, however, when it comes to memory usage, the human-in-the-loop code is performing equally well with the fully agentic function. 
 
@@ -221,7 +221,7 @@ How about readability? As I mentioned earlier, I was aiming to find measures tha
 
 Given that some measures have an inverse relationship with readability, I decided to rank different implementations and unify these so that larger rank means more readability. 
 
-{{< figure src="/human_vs_agent_vs_human_in_the_loop.md/bts_readability_charts.png" caption="Evaluation of Readability" >}}
+{{< figure src="/human_vs_agent_vs_human_in_the_loop/bts_readability_charts.png" caption="Evaluation of Readability" >}}
 
 The chart shows each measure and also an average rank across measures. As we can see, the human-in-the-loop approach still performs best on average across all metrics. Note that the human code performs best with Code Complexity measures as it includes few lines compared to the other approaches.
 
