@@ -1,4 +1,6 @@
 :root {
+    /* Wider reading column (PaperMod default --main-width is 720px) */
+    --main-width: 960px;
     --theme: #fff;
     --entry: #cfcfff;
     --primary: rgba(0, 0, 106, 0.88);

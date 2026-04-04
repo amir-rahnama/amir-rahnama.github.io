@@ -1,3 +1,48 @@
+<style>
+  /* Code row: same width as post text; three equal columns share full .post-content width (flex_code_row) */
+  .flex-code-row-wide {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 0.25rem;
+    width: 100%;
+    max-width: 100%;
+    margin: 1.25rem 0;
+    box-sizing: border-box;
+    overflow-x: visible;
+    overflow-y: visible;
+    padding-bottom: 0.15rem;
+  }
+
+  /* PaperMod uses margin: 10px auto on .highlight — auto L/R spreads flex items apart */
+  .post-content .flex-code-row-wide > .highlight {
+    flex: 1 1 0;
+    min-width: 0;
+    width: auto;
+    margin: 0 !important;
+  }
+
+  @media (max-width: 640px) {
+    .flex-code-row-wide {
+      flex-direction: column;
+    }
+
+    .post-content .flex-code-row-wide > .highlight {
+      flex: 1 1 auto;
+      width: 100%;
+    }
+  }
+
+  .flex-code-row-wide pre,
+  .flex-code-row-wide pre.chroma {
+    min-width: 0;
+    margin: 0;
+    overflow-x: auto;
+    font-size: 0.8125rem;
+    line-height: 1.45;
+  }
+</style>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -13,15 +58,14 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         renderMathInElement(document.body, {
-            // customised options
-            // • auto-render specific keys, e.g.:
             delimiters: [
                 { left: '$$', right: '$$', display: true },
                 { left: '$', right: '$', display: false },
                 { left: '\\(', right: '\\)', display: false },
                 { left: '\\[', right: '\\]', display: true }
             ],
-            // • rendering keys, e.g.:
+            ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code', 'option'],
+            ignoredClasses: ['highlight', 'chroma', 'katex'],
             throwOnError: false
         });
     });
