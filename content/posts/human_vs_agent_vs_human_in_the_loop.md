@@ -30,7 +30,7 @@ Using this categorization, I would like to see how choosing any of these categor
 
 ## Use Case: Binary Search Tree
 
-Let us show this by an example using Cursor's Composer 2 as an agent. Assume we are building a simple Binary Tree Search (BTS) that accepts an array and builds a BTS from it. The Binary Tree Search (BTS) is a sorted tree-based data structure that you can insert an element to it. There is with only one rule: in each tree, the left (right) child of the root node has to have a value less (larger) than the root node. If you would like to know more about Binary Tree Search insertion, you can read [GeeksforGeeks' article](https://www.geeksforgeeks.org/dsa/insertion-in-binary-search-tree/) about it.
+Let us show this by an example using Cursor's Composer 2 as an agent. Assume we are building a simple Binary Search Tree (BST) that accepts an array and builds a BST from it. The Binary Search Tree (BST) is a sorted tree-based data structure that you can insert an element to it. There is with only one rule: in each tree, the left (right) child of the root node has to have a value less (larger) than the root node. If you would like to know more about Binary Search Tree insertion, you can read [GeeksforGeeks' article](https://www.geeksforgeeks.org/dsa/insertion-in-binary-search-tree/) about it.
 
 Note that this problem is a known and easy problem for an agent like Composer 2, I decided to keep my interaction with the agent to max 3 interactions (prompts) to avoid overfitting. The code is also expected to show the tree in the prompt but I do not dig into this part of the function even though the printing function of the agentic code seemed unnecessary complex and redundant.
 
@@ -112,7 +112,7 @@ class BinarySearchTree:
         self.root = self._insert_recursive(self.root, val)
 ```
 {{< /flex_code_row >}}
-Note that, in the first prompt in the human-in-the-loop scenario, there was no abstraction for the BTS tree. After iteration with the agent, the agent realized that it is better to define a BTS class in the HITL case for readability. 
+Note that, in the first prompt in the human-in-the-loop scenario, there was no abstraction for the BST tree. After iteration with the agent, the agent realized that it is better to define a BST class in the HITL case for readability. 
 
 
 So far, I wanted to show the structure and the syntax difference between a human/agent/agent-assisted code even when it comes to the class definitions. Now let us focus on the main part of the code. How will the insertion logic will be implemented? 
@@ -242,11 +242,11 @@ One final conclusion I had was based on my analysis, we are *not* there for the 
 
 When I use code agents in my daily work or in this blogpost, I feel a bit concerned. One crucial aspect of software engineering has always been the growth of the engineers. Before LLMs, software engineers used forums like Stack Overflow to learn collaboratively. Reviewing multiple answers, helping others, and reflecting on solutions provided deep learning. Engineers began by writing imperfect code, learning from debugging, and iteratively improving solutions.
 
-Agent-assisted development risks turning engineers into passive consumers of solutions provided by a black-box thinker. Software engineers may end up relying on the generated code without developing the reasoning skills needed to solve new problems independently. During the 5/6 hours I spent developing this case and analyzing the results, I felt I could have learned more about BTS and its implementations with the same amount of time at hand but no agents. Agentic development is time consuming, since you have to read all these generated prompts, but sometimes less giving.
+Agent-assisted development risks turning engineers into passive consumers of solutions provided by a black-box thinker. Software engineers may end up relying on the generated code without developing the reasoning skills needed to solve new problems independently. During the 5/6 hours I spent developing this case and analyzing the results, I felt I could have learned more about BST and its implementations with the same amount of time at hand but no agents. Agentic development is time consuming, since you have to read all these generated prompts, but sometimes less giving.
 
 And I have another concern. You cannot make someone a distinguished author by handing them the first draft of Harry Potter. They might edit the draft or add subplots, but the process of becoming J.K. Rowling — developing skill and intuition — cannot be bypassed. Similarly, engineers must engage deeply with problems and solutions to truly grow.
 
-In this specific analysis, I felt like using the agent, I will never know the possible alternatives another developer would implement the insertion code of a BTS and that felt a bit disheartening to be honest.
+In this specific analysis, I felt like using the agent, I will never know the possible alternatives another developer would implement the insertion code of a BST and that felt a bit disheartening to be honest.
 
 ### Acknowlegment
 Special thanks to Mattias Lundberg for reading the first draft of this blogpost.
@@ -262,7 +262,7 @@ Prompt 2: Why did you not keep the insertion function recursive?
 > Agent: Due to performance concerns.
 
 #### Human-in-the-loop 
-Prompt: Can you include a class for the BTS itself? 
+Prompt: Can you include a class for the BST itself? 
 > Agents makes changes
 Prompt 2: This insertion function is a bit complicated as we speak since you are not calling it recursive, can we get away these `while True` loops can you make it another way? 
 > Agent answers that recursive function will sacrifice too much of the performance.
@@ -270,8 +270,8 @@ The engineer stops and keeps the code as final.
 
 
 ### Fully agentic 
-Prompt: I want you to write a simple Binary Search Tree function In Python that accepts an array and can insert the elements into the array and prints a viz of the tree in the prompt line. Don't look at the other files and any other resources in this repository. Just implement it from your own context here. The BTS needs to accept an array and build the tree. Consider readability and performance at the same time and make sure the code runs correctly with an input.
+Prompt: I want you to write a simple Binary Search Tree function In Python that accepts an array and can insert the elements into the array and prints a viz of the tree in the prompt line. Don't look at the other files and any other resources in this repository. Just implement it from your own context here. The BST needs to accept an array and build the tree. Consider readability and performance at the same time and make sure the code runs correctly with an input.
 > Agent answers with the code and a `___main__` function to run the code.
 
 ### Appendix 2: Code
-The full code for the article is on: [my Github repository](https://github.com/amir-rahnama/coding_exercise_playground/tree/main/bts).
+The full code for the article is on: [my Github repository](https://github.com/amir-rahnama/coding_exercise_playground/tree/main/bst).
