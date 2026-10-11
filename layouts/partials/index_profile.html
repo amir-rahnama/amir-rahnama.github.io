@@ -1,17 +1,24 @@
-<div class="profile">
+{{- $isVideo := false }}
+{{- with site.Params.profileMode.imageUrl }}
+{{- $ext := path.Ext (lower .) }}
+{{- $isVideo = in (slice ".mp4" ".webm" ".mov") $ext }}
+{{- end }}
+<div class="profile{{ if $isVideo }} profile-hero{{ end }}">
     {{- with site.Params.profileMode }}
+    {{- if $isVideo }}
+    {{- /* Full-bleed video; the nav and the profile text overlay it */ -}}
+    {{- /* poster = first video frame, shown wherever the video can't play */ -}}
+    {{- $poster := "" }}
+    {{- with .imagePoster }}{{ $poster = . | absURL }}{{ end }}
+    <div class="hero-media"{{ with $poster }} style="background-image: url('{{ . }}')"{{ end }}>
+        <video class="hero-video" autoplay muted loop playsinline aria-hidden="true" title="{{ .imageTitle }}"{{ with $poster }} poster="{{ . }}"{{ end }}>
+            <source src="{{ .imageUrl | absURL }}" type="{{ with path.Ext (lower .imageUrl) }}{{ if eq . ".mp4" }}video/mp4{{ else if eq . ".webm" }}video/webm{{ else }}video/quicktime{{ end }}{{ end }}">
+        </video>
+    </div>
+    {{- end }}
     <div class="profile_inner">
         {{- if .imageUrl -}}
-        {{- if (or (strings.HasSuffix .imageUrl ".mp4") (strings.HasSuffix .imageUrl ".webm") (strings.HasSuffix
-        .imageUrl ".mov")) -}}
-        {{- /* Video element */ -}}
-        <video autoplay muted loop playsinline
-            style="width: {{ .imageWidth | default 150 }}px; height: {{ .imageHeight | default 150 }}px; border-radius: 50%; object-fit: cover;"
-            alt="{{ .imageTitle | default " profile video" }}" title="{{ .imageTitle }}">
-            <source src="{{ .imageUrl | absURL }}" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        {{- else -}}
+        {{- if not $isVideo -}}
         {{- /* Original image code */ -}}
         {{- $img := "" }}
         {{- if not (urls.Parse .imageUrl).IsAbs }}

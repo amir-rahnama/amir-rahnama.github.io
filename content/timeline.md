@@ -19,7 +19,21 @@ disableShare = true
       </svg>
     </div>
     <div class="content">
-      <time>2025 — Now</time>
+      <time>2026 — Now</time>
+      <h2>Vend Marketplaces AB</h2>
+      <h3>Senior Data Scientist</h3>
+      <p>AI/ML-powered Search and Recommendation for Finn, Blocket, DBA and Tori</p>
+    </div>
+  </div>
+
+  <div class="event work">
+    <div class="marker">
+      <svg width="12" height="12">
+        <circle cx="6" cy="6" r="5" />
+      </svg>
+    </div>
+    <div class="content">
+      <time>2025 — 2026</time>
       <h2>All Ears AB</h2>
       <h3>Senior ML Engineer</h3>
       <p> Multi-modal (Video, Audio, Text) Embeddings, Real-time Trends</p>

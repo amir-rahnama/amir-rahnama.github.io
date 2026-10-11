@@ -219,6 +219,167 @@ body {
     }
 }
 
+/* Landing hero: one full-screen video with the nav and profile text overlaid on it.
+   `.main .profile-hero` outranks PaperMod's `.main .profile`. */
+.main .profile-hero {
+    position: relative;
+    isolation: isolate;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-end;
+    min-height: 0;
+    /* exactly one screen: video fills it, text overlays the bottom */
+    height: 100vh;
+    height: 100svh;
+    width: 100%;
+}
+
+/* home page is a single non-scrolling screen: drop .main's column and padding */
+.main:has(.profile-hero) {
+    max-width: none;
+    min-height: 0;
+    padding: 0;
+}
+
+html:has(.profile-hero),
+body:has(.profile-hero) {
+    overflow: hidden;
+}
+
+.profile-hero .hero-media {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    /* poster fallback: same cover + focal point as .hero-video's object-position */
+    background: #0a0f2e 60% 30% / cover no-repeat;
+}
+
+.profile-hero .hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* keep the face in frame when cover-cropping on narrow screens */
+    object-position: 60% 30%;
+}
+
+/* dark bands at the top (nav) and bottom (profile text) so both stay readable */
+.profile-hero .hero-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.4) 15%, rgba(0, 0, 0, 0) 40%),
+        linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.5) 30%, rgba(0, 0, 0, 0) 60%),
+        rgba(0, 0, 0, 0.12);
+    pointer-events: none;
+}
+
+.profile-hero .profile_inner {
+    padding: 1.25rem var(--gap) 2.5rem;
+}
+
+.profile-hero .profile_inner,
+.profile-hero .profile_inner h1,
+.profile-hero .profile_inner span,
+.profile-hero .profile_inner a {
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8), 0 2px 14px rgba(0, 0, 0, 0.7);
+}
+
+.profile-hero .profile_inner span {
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.profile-hero .social-icons svg {
+    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.8));
+}
+
+/* undo the mobile 28px box so icons keep their size and sit on one line */
+.profile-hero .social-icons {
+    align-items: center;
+}
+
+.profile-hero .social-icons a {
+    width: auto;
+    height: auto;
+}
+
+/* the nav logo already shows the name: keep the h1 for screen readers only */
+.profile-hero .profile_inner h1 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+/* Nav on top of the hero video (home page only) */
+body:has(.profile-hero) .header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+body:has(.profile-hero) .header a,
+body:has(.profile-hero) .header button {
+    color: #fff;
+    font-weight: 600;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+body:has(.profile-hero) .header svg {
+    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.7));
+}
+
+/* Desktop: text on the left, vertically centered, over the empty sky (face is right of center) */
+@media (min-width: 700px) {
+    .main .profile-hero {
+        justify-content: center;
+    }
+
+    .profile-hero .hero-media::after {
+        background:
+            linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.4) 15%, rgba(0, 0, 0, 0) 40%),
+            linear-gradient(to right, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.5) 30%, rgba(0, 0, 0, 0) 65%),
+            rgba(0, 0, 0, 0.12);
+    }
+
+    .profile-hero .profile_inner {
+        /* line up with the nav logo */
+        max-width: calc(var(--nav-width) + var(--gap) * 2);
+        margin: 0 auto;
+        padding: 0 55% 0 var(--gap);
+        box-sizing: border-box;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .profile-hero .social-icons {
+        justify-content: flex-start;
+        /* cancel the 10px link padding so the first icon lines up with the text */
+        margin-left: -10px;
+    }
+}
+
+@media (max-width: 699px) {
+    .profile-hero .profile_inner {
+        padding: 0.75rem 1rem 1.5rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .profile-hero .hero-video {
+        display: none;
+    }
+}
+
 /* Make blog post images styled */
 .post-content figure {
     margin: 2em auto;

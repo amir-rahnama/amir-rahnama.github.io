@@ -46,14 +46,16 @@ ShowBreadCrumbs = true
 ShowCodeCopyButtons = true
 ShowRssButtonInSectionTermList = true
 ShowToc = true
-images = [ "papermod-cover.png" ] 
+hideFooter = true
+images = [ "papermod-cover.png" ]
 
   [params.profileMode]
   enabled = true
-  title = "Amir Rahnama, Ph.D"
-  subtitle = "Senior ML Engineer @ [All Ears](https://sv.allears.ai/)"
-  imageUrl = "intro.mp4"
-  imageTitle = "my image"
+  title = "Amir Rahnama"
+  subtitle = "Senior Data Scientist @ Vend<br>Ph.D"
+  imageUrl = "hero.mp4"
+  imagePoster = "IMG_2471-poster.jpg"
+  imageTitle = "Amir Rahnama's personal website"
   imageWidth = 300
   imageHeight = 300
 

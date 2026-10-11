@@ -19,9 +19,20 @@ Machine Learning and AI professional with 7+ years of industry and 5 years of ac
 
 ## 💼 Work Experience
 
+### 🔎 Senior Data Scientist
+**Vend Marketplaces AB** | Stockholm, Sweden 🇸🇪  
+*April 2026 – Present*
+
+Enabling AI/ML-powered search and recommendation models for Vend's marketplaces: Finn, Blocket, DBA and Tori.
+
+**Tech stack:** PyTorch, Hugging Face, Qdrant, Kubernetes, and Python  
+**Supervisor:** Özcan Suysuren
+
+---
+
 ### 🎙️ Senior Machine Learning Engineer
 **All Ears AB** | Stockholm, Sweden 🇸🇪  
-*October 2025 – Present*
+*October 2025 – March 2026*
 
 I am involved in several ML projects, including optimizing automatic speech recognition (ASR) models; developing multimodal text, audio, and video embedding models; and detecting real-time events. Ranking and recommendation systems that prioritize high-signal brand mentions based on user preferences. As an individual contributor, developed a survival-analysis model to predict time-to-churn and customer retention.
 
