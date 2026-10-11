@@ -19,30 +19,43 @@
             <source {{ if $anim }}data-{{ end }}src="{{ .imageUrl | absURL }}" type="{{ with path.Ext (lower .imageUrl) }}{{ if eq . ".mp4" }}video/mp4{{ else if eq . ".webm" }}video/webm{{ else }}video/quicktime{{ end }}{{ end }}">
         </video>
     </div>
-    {{- /* iOS blocks autoplay in Low Power Mode: retry when ready and on every tap until it is playing.
-         touchend/click count as user gestures on iOS; touchstart does not. */ -}}
+    {{- /* Phones try the real video first. If the browser refuses autoplay (iOS Low Power Mode) they switch to the
+         animated WebP, which isn't subject to that rule. Desktop keeps retrying on gestures. */ -}}
     <script>
         (function () {
             var media = document.querySelector('.hero-media');
             var v = document.querySelector('.hero-video');
             if (!v) return;
             var anim = media.getAttribute('data-anim');
-            if (anim && window.matchMedia('(max-width: 699px)').matches) {
+            var phone = anim && window.matchMedia('(max-width: 699px)').matches;
+            var poster = media.style.backgroundImage;
+            var done = false;
+            var fallback = function () {
+                if (done) return;
+                done = true;
                 v.remove();
                 // animated image on top, static poster underneath while it loads
-                media.style.backgroundImage = "url('" + anim + "'), " + media.style.backgroundImage;
-                return;
-            }
+                media.style.backgroundImage = "url('" + anim + "'), " + poster;
+            };
             var s = v.querySelector('source');
             if (s.getAttribute('data-src')) { s.src = s.getAttribute('data-src'); v.load(); }
             v.muted = true;
-            var play = function () { var p = v.play(); if (p && p.catch) p.catch(function () {}); };
+            var playing = false;
             var gestures = ['touchend', 'pointerup', 'click', 'keydown'];
+            var play = function () {
+                var p = v.play();
+                if (p && p.catch) p.catch(function () { if (phone) fallback(); });
+            };
             v.addEventListener('playing', function () {
+                playing = true;
                 gestures.forEach(function (e) { window.removeEventListener(e, play); });
             });
             v.addEventListener('canplay', play);
-            gestures.forEach(function (e) { window.addEventListener(e, play, { passive: true }); });
+            if (phone) {
+                setTimeout(function () { if (!playing) fallback(); }, 3000);
+            } else {
+                gestures.forEach(function (e) { window.addEventListener(e, play, { passive: true }); });
+            }
             play();
         })();
     </script>
