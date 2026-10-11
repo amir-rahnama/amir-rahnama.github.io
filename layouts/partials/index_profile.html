@@ -15,17 +15,21 @@
             <source src="{{ .imageUrl | absURL }}" type="{{ with path.Ext (lower .imageUrl) }}{{ if eq . ".mp4" }}video/mp4{{ else if eq . ".webm" }}video/webm{{ else }}video/quicktime{{ end }}{{ end }}">
         </video>
     </div>
-    {{- /* Some mobile browsers (iOS Low Power Mode, data saver) block autoplay: retry now and on first touch */ -}}
+    {{- /* iOS blocks autoplay in Low Power Mode: retry when ready and on every tap until it is playing.
+         touchend/click count as user gestures on iOS; touchstart does not. */ -}}
     <script>
         (function () {
             var v = document.querySelector('.hero-video');
             if (!v) return;
             v.muted = true;
             var play = function () { var p = v.play(); if (p && p.catch) p.catch(function () {}); };
-            play();
-            ['touchstart', 'click', 'scroll', 'keydown'].forEach(function (e) {
-                window.addEventListener(e, play, { once: true, passive: true });
+            var gestures = ['touchend', 'pointerup', 'click', 'keydown'];
+            v.addEventListener('playing', function () {
+                gestures.forEach(function (e) { window.removeEventListener(e, play); });
             });
+            v.addEventListener('canplay', play);
+            gestures.forEach(function (e) { window.addEventListener(e, play, { passive: true }); });
+            play();
         })();
     </script>
     {{- end }}

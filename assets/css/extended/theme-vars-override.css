@@ -263,6 +263,16 @@ body:has(.profile-hero) {
     object-fit: cover;
     /* keep the face in frame when cover-cropping on narrow screens */
     object-position: var(--hero-pos);
+    /* taps go to the page script, which starts playback; never show a native control */
+    pointer-events: none;
+}
+
+/* hide iOS/Safari's native play button when autoplay is blocked: the poster shows instead */
+.profile-hero .hero-video::-webkit-media-controls,
+.profile-hero .hero-video::-webkit-media-controls-start-playback-button,
+.profile-hero .hero-video::-webkit-media-controls-overlay-play-button {
+    display: none !important;
+    -webkit-appearance: none;
 }
 
 /* dark bands at the top (nav) and bottom (profile text) so both stay readable */
