@@ -119,5 +119,50 @@
         </div>
         {{- end }}
     </div>
+    {{- if $isVideo }}
+    {{- /* Typewriter: the subtitle types in character by character, then the social icons fade in.
+         Every character is rendered up front (invisible) so the layout never shifts while typing. */ -}}
+    <script>
+        (function () {
+            var hero = document.querySelector('.profile-hero');
+            var sub = hero && hero.querySelector('.profile_inner > span');
+            if (!sub || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            sub.setAttribute('aria-label', sub.textContent);
+            var chars = [];
+            var wrap = function (node) {
+                Array.prototype.slice.call(node.childNodes).forEach(function (n) {
+                    if (n.nodeType === 3) {
+                        var frag = document.createDocumentFragment();
+                        n.textContent.split('').forEach(function (c) {
+                            var s = document.createElement('span');
+                            s.className = 'tw-char';
+                            s.setAttribute('aria-hidden', 'true');
+                            s.textContent = c;
+                            chars.push(s);
+                            frag.appendChild(s);
+                        });
+                        node.replaceChild(frag, n);
+                    } else if (n.nodeType === 1) wrap(n);   // keeps <br> and other tags in place
+                });
+            };
+            wrap(sub);
+            hero.classList.add('typing');
+            var i = 0, last = null;
+            var type = function () {
+                if (last) last.classList.remove('tw-last');
+                if (i >= chars.length) {
+                    // done: keep a blinking caret on the last character and bring the icons in
+                    last.classList.add('tw-last');
+                    hero.classList.add('typed');
+                    return;
+                }
+                last = chars[i++];
+                last.classList.add('tw-on', 'tw-last');
+                setTimeout(type, 35 + Math.random() * 55);
+            };
+            setTimeout(type, 700);
+        })();
+    </script>
+    {{- end }}
     {{- end}}
 </div>
