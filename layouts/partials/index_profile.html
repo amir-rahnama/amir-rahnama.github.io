@@ -7,20 +7,34 @@
     {{- with site.Params.profileMode }}
     {{- if $isVideo }}
     {{- /* Full-bleed video; the nav and the profile text overlay it */ -}}
-    {{- /* poster = first video frame, shown wherever the video can't play */ -}}
+    {{- /* poster = first video frame, shown wherever the video can't play.
+         imageMobile = animated WebP for phones: iOS blocks <video> autoplay (Low Power Mode) but not animated images. */ -}}
     {{- $poster := "" }}
     {{- with .imagePoster }}{{ $poster = . | absURL }}{{ end }}
-    <div class="hero-media"{{ with $poster }} style="background-image: url('{{ . }}')"{{ end }}>
+    {{- $anim := "" }}
+    {{- with .imageMobile }}{{ $anim = . | absURL }}{{ end }}
+    <div class="hero-media"{{ with $poster }} style="background-image: url('{{ . }}')"{{ end }}{{ with $anim }} data-anim="{{ . }}"{{ end }}>
         <video class="hero-video" autoplay muted loop playsinline aria-hidden="true" title="{{ .imageTitle }}"{{ with $poster }} poster="{{ . }}"{{ end }}>
-            <source src="{{ .imageUrl | absURL }}" type="{{ with path.Ext (lower .imageUrl) }}{{ if eq . ".mp4" }}video/mp4{{ else if eq . ".webm" }}video/webm{{ else }}video/quicktime{{ end }}{{ end }}">
+            {{- /* with a mobile animation the src is set by the script on desktop only, so phones never download the video */}}
+            <source {{ if $anim }}data-{{ end }}src="{{ .imageUrl | absURL }}" type="{{ with path.Ext (lower .imageUrl) }}{{ if eq . ".mp4" }}video/mp4{{ else if eq . ".webm" }}video/webm{{ else }}video/quicktime{{ end }}{{ end }}">
         </video>
     </div>
     {{- /* iOS blocks autoplay in Low Power Mode: retry when ready and on every tap until it is playing.
          touchend/click count as user gestures on iOS; touchstart does not. */ -}}
     <script>
         (function () {
+            var media = document.querySelector('.hero-media');
             var v = document.querySelector('.hero-video');
             if (!v) return;
+            var anim = media.getAttribute('data-anim');
+            if (anim && window.matchMedia('(max-width: 699px)').matches) {
+                v.remove();
+                // animated image on top, static poster underneath while it loads
+                media.style.backgroundImage = "url('" + anim + "'), " + media.style.backgroundImage;
+                return;
+            }
+            var s = v.querySelector('source');
+            if (s.getAttribute('data-src')) { s.src = s.getAttribute('data-src'); v.load(); }
             v.muted = true;
             var play = function () { var p = v.play(); if (p && p.catch) p.catch(function () {}); };
             var gestures = ['touchend', 'pointerup', 'click', 'keydown'];

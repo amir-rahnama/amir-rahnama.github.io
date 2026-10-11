@@ -55,6 +55,7 @@ images = [ "papermod-cover.png" ]
   subtitle = "Senior Data Scientist @ Vend<br>Ph.D"
   imageUrl = "hero.mp4"
   imagePoster = "IMG_2471-poster.jpg"
+  imageMobile = "hero-mobile.webp"
   imageTitle = "Amir Rahnama's personal website"
   imageWidth = 300
   imageHeight = 300
