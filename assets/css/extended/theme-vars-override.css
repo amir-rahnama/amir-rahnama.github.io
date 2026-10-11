@@ -251,8 +251,10 @@ body:has(.profile-hero) {
     inset: 0;
     z-index: -1;
     overflow: hidden;
+    /* focal point shared by the video and its poster fallback */
+    --hero-pos: 60% 30%;
     /* poster fallback: same cover + focal point as .hero-video's object-position */
-    background: #0a0f2e 60% 30% / cover no-repeat;
+    background: #0a0f2e var(--hero-pos) / cover no-repeat;
 }
 
 .profile-hero .hero-video {
@@ -260,7 +262,7 @@ body:has(.profile-hero) {
     height: 100%;
     object-fit: cover;
     /* keep the face in frame when cover-cropping on narrow screens */
-    object-position: 60% 30%;
+    object-position: var(--hero-pos);
 }
 
 /* dark bands at the top (nav) and bottom (profile text) so both stay readable */
@@ -369,14 +371,13 @@ body:has(.profile-hero) .header svg {
 }
 
 @media (max-width: 699px) {
+    .profile-hero .hero-media {
+        /* portrait crop is much tighter: the face sits at ~53% of the frame width */
+        --hero-pos: 53% 50%;
+    }
+
     .profile-hero .profile_inner {
         padding: 0.75rem 1rem 1.5rem;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .profile-hero .hero-video {
-        display: none;
     }
 }
 
