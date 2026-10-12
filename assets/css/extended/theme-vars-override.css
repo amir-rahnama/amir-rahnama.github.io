@@ -317,6 +317,12 @@ body:has(.profile-hero) {
 
 /* Typewriter subtitle: chars are laid out invisible, then revealed one by one by the page script.
    `.typing` is only set by that script, so without JS everything just shows. */
+/* the mobile `.profile_inner span` rule makes spans block + margined: keep each character inline */
+.profile-hero .tw-char {
+    display: inline;
+    margin: 0;
+}
+
 .profile-hero.typing .tw-char {
     opacity: 0;
 }
